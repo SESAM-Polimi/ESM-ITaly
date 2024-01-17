@@ -1,0 +1,6 @@
+Risultati:
+- 0results_ALL: caso base, costo RES e BATT descrescente fino al 2030, carbon tax crescente fino a 2030
+- 0results_ALL_increasingCT: carbon tax crescente anche dopo 2030 (100€/ton al 2030, fino a 500€/ton al 2050 -> vecchio scenario poi scartato)
+- 0results_ALL_noCarbTax: rimossa carbon tax, invariati costi RES e BATT
+- 0results_ALL_noCarbTax_constRES: rimossa carbon tax, costi rinnovabili bloccati al 2021
+- 0results_ALL_noCarbTax_allCost: rimossa carbon tax, costi rinnovabili e fuel bloccati al 2021 (rimosso spike storico tra 2021 e 2023 e incremento sucessivo del 2% per considerare inflazione) -> tutto costante durante il run
