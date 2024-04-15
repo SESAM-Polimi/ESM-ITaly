@@ -18,15 +18,22 @@ def run_model(model, path):
     model.Base._data_assigment()
     model.Base._model_completion()
     model.Base._model_run(solver="GUROBI", verbose=True)
-    # if hasattr(model.Base,"results"):
-    #     model.Base._reallocate_blender_emission(model.Base.Regions)
 
 timings = {}
 results = {}
 
 main_folder = "case_studies"
 case_studies = [
-    {"name": "Italy24", "scenarios": ["a.1_STEPS_res","a.2.0_STEPS_inv", "a.2.1_STEPS_inv_RESconst","a.2.2_STEPS_inv_RES50","a.2.3_STEPS_inv_CTgrow","b.0_NUC","c.NZE","d.0_NZE-NUC"]},
+    {"name": "Italy24", "scenarios": [
+        "a.1_STEPS_res",
+        "a.2.0_STEPS_inv",
+        "a.2.1_STEPS_inv_RESconst",
+        "a.2.2_STEPS_inv_RES50",
+        "a.2.3_STEPS_inv_CTgrow",
+        "b.0_NUC",
+        "c.NZE",
+        "d.0_NZE-NUC",
+        ]},
 ]
 
 scenario_color = {
@@ -45,7 +52,6 @@ objective = "cost_discount"  # options: cost_discount, cost, production, CO2_emi
 #%% Model initialization
 for inputs in case_studies:
     model = Model("{}/{}/Sets.xlsx".format(main_folder, inputs["name"]))
-
 
 # #%% Generate clean clusters template
 # for inputs in case_studies:
@@ -99,7 +105,8 @@ for inputs in case_studies:
     )
     print(" DONE")
 
-#%%
 with open("timing.json","w") as fp:
     json.dump(timings,fp)
 
+
+# %%
