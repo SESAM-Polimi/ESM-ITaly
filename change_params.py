@@ -27,7 +27,7 @@ for folder in folders:
                 data.loc[(matrix,row,slice(None)),header] = pd.read_excel(new_data,index_col=[0]).loc[year,'new value']
     
             # Save new data
-            with pd.ExcelWriter(f"{folder}/scenarios/{case_study}/inputs/new_data.xlsx") as writer:
+            with pd.ExcelWriter(f"{folder}/scenarios/{case_study}/inputs/{data_file}") as writer:
                 for sheet,data in tech_data.items():
                     data.to_excel(writer,sheet_name=sheet)
 
