@@ -9,38 +9,39 @@ Created on Fri Apr  1 22:21:07 2022
 import pandas as pd
 
 paths = {
-    "all": {
-        "path": r"C:\Users\loren\Documents\GitHub\SESAM\ESM-Italy\ESM_Italy_10\case_studies\Italy24\scenarios\Risultati_Tesi\0results_ALL",
+    "10y": {
+        "path": r"C:\Users\loren\Documents\GitHub\SESAM\ESM-Italy\ESM_Italy_10\case_studies\Italy24\scenarios\results",
         "scenarios": {
-            "STEPS_newcap":"a.1_STEPS_res",
-            "STEPS_invcap":"a.2.0_STEPS_inv",
-            "STEPS_NUC":"b.0_NUC",
-            "NetZero2050":"c.NZE",
-            "NetZero2050_NUC":"d.0_NZE-NUC",
+            "a.1_STEPS_res":"a.1_STEPS_res",
+            "a.2.0_STEPS_inv":"a.2.0_STEPS_inv",
+            "a.2.1_STEPS_inv_RESconst":"a.2.1_STEPS_inv_RESconst",
+            "a.2.2_STEPS_inv_RES50":"a.2.2_STEPS_inv_RES50",
+            "a.2.3_STEPS_inv_CTgrow":"a.2.3_STEPS_inv_CTgrow",
+            "a.2.4_STEPS_inv_ELZ50":"a.2.4_STEPS_inv_ELZ50",
+            "b.0_NUC":"b.0_NUC",
+            "c.NZE":"c.NZE",
+            "d.0_NZE-NUC":"d.0_NZE-NUC",
             }
         },
-    "CT": {
-        "path": r"C:\Users\loren\Documents\GitHub\SESAM\ESM-Italy\ESM_Italy_10\case_studies\Italy24\scenarios\Risultati_Tesi\0results_ALL_increasingCT",
+    "7y": {
+        "path": r"C:\Users\loren\Documents\GitHub\SESAM\ESM-Italy\ESM_Italy_7\case_studies\Italy24\scenarios\results",
         "scenarios": {
-            "STEPS_invcap":"a.2.3_STEPS_inv_CTgrow",
+            "b.1_NUC_7":"b.1_NUC_7",
+            "d.1_NZE-NUC_7":"d.1_NZE-NUC_7",
             }
         },
-    "cd_sens_7": {
-        "path": r"C:\Users\loren\Documents\GitHub\SESAM\ESM-Italy\ESM_Italy_10\case_studies\Italy24\scenarios\Risultati_Tesi\0results_cd_sens\7years",
+    "13y": {
+        "path": r"C:\Users\loren\Documents\GitHub\SESAM\ESM-Italy\ESM_Italy_13\case_studies\Italy24\scenarios\results",
         "scenarios": {
-            "STEPS_NUC":"b.1_NUC_7"
-            }
-        },                   
-    "cd_sens_13": {
-        "path": r"C:\Users\loren\Documents\GitHub\SESAM\ESM-Italy\ESM_Italy_10\case_studies\Italy24\scenarios\Risultati_Tesi\0results_cd_sens\13years",
-        "scenarios": {
-            "STEPS_NUC":"b.2_NUC_13"
+            "b.2_NUC_13":"b.2_NUC_13",
+            "d.2_NZE-NUC_13":"d.2_NZE-NUC_13",
             }
         },
-    "cd_sens_17": {
-        "path": r"C:\Users\loren\Documents\GitHub\SESAM\ESM-Italy\ESM_Italy_10\case_studies\Italy24\scenarios\Risultati_Tesi\0results_cd_sens\17years",
+    "17y": {
+        "path": r"C:\Users\loren\Documents\GitHub\SESAM\ESM-Italy\ESM_Italy_17\case_studies\Italy24\scenarios\results",
         "scenarios": {
-            "STEPS_NUC":"b.3_NUC_17"
+            "b.3_NUC_17":"b.3_NUC_17",
+            "d.3_NZE-NUC_17":"d.3_NZE-NUC_17",
             }
         },
 }
@@ -87,40 +88,10 @@ for file,ic in files.items():
         data.columns = ['value']
         data.index.names = [None] * len(data.index.names)
 
-            
         merged = pd.concat([
             merged,
             data], axis=0)
     
     merged.to_csv(f"{save}\{file}.csv")
         
-        
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# %%
+#%%
