@@ -74,7 +74,7 @@ inv_costs/=1000
 inv_costs.index.names = ['year','name','tech','sector']
 inv_costs.reset_index(inplace=True) 
 
-years = range(2020,2051,10)
+years = range(2020,2051,5)
 techs = ['Coal','Natural gas','Nuclear','Off-shore wind','On-shore wind','PV','Electrolyzers','Steam reformers']
 
 tech_colors_map = {
